@@ -1,0 +1,12 @@
+{
+    "name": "omnicolor/shoresy",
+    "description": "A bot encouraging playful banter with the quick-witted hockey stud Shoresy.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Omni Adams",
+            "email": "omni@digitaldarkness.com"
+        }
+    ],
+    "require": {}
+}
