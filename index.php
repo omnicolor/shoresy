@@ -4,6 +4,7 @@ namespace Shoresy;
 
 require 'vendor/autoload.php';
 
+use Dotenv\Dotenv;
 use GuzzleHttp\Client as Guzzle;
 
 header('Access-Control-Allow-Origin: *');
@@ -42,12 +43,12 @@ function verifyRequest(
     return hash_equals($hash, $signature);
 }
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$token = getenv('TOKEN');
-$clientSecret = getenv('CLIENT_SECRET');
-$signingSecret = getenv('SIGNING_SECRET');
+$token = $_ENV['TOKEN'];
+$clientSecret = $_ENV['CLIENT_SECRET'];
+$signingSecret = $_ENV['SIGNING_SECRET'];
 
 $headers = getallheaders();
 $signature = $headers['X-Slack-Signature'];
