@@ -42,9 +42,12 @@ function verifyRequest(
     return hash_equals($hash, $signature);
 }
 
-$token = 'xoxb-2186724946-2064595360421-UQC5GiyTcwTLEraOTglhTiQ1';
-$clientSecret = '20a932f171c761be8ac4f2d357f29376';
-$signingSecret = '1635838d5859deae1300d9b3f63d931a';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$token = getenv('TOKEN');
+$clientSecret = getenv('CLIENT_SECRET');
+$signingSecret = getenv('SIGNING_SECRET');
 
 $headers = getallheaders();
 $signature = $headers['X-Slack-Signature'];
