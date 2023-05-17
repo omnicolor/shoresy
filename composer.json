@@ -8,5 +8,7 @@
             "email": "omni@digitaldarkness.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.3"
+    }
 }
